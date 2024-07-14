@@ -258,11 +258,13 @@ int main() {
     memory[0x101] = 0x41;
     memory[0x102] = 0x20; // JSR $2000 (Jump to Subroutine)
     memory[0x103] = 0x00;
-    memory[0x104] = 0x20; 
-    memory[0x105] = 0x4C; // JMP $102 (Jump back to the start)
+    memory[0x104] = 0x20;
+    memory[0x110] = ;
+
+    /*memory[0x105] = 0x4C; // JMP $102 (Jump back to the start)
     memory[0x106] = 0x02;
     memory[0x107] = 0x01;
-    memory[0x200] = 0x00; // Initial value for the counter
+    memory[0x200] = 0x00; // Initial value for the counter*/
     // Subroutine to print a character
     memory[0x2000] = 0xA9; // LDA #$41 ('A')
     memory[0x2001] = 0x41;
@@ -282,7 +284,7 @@ int main() {
     // Emulator loop
     while (1) {
         execute_instruction(&cpu);
-        //dump_memory(0x100, 0x10E); // Example: Dump memory from 0x100 to 0x104
+        dump_memory(0x100, 0x20E); // Example: Dump memory from 0x100 to 0x104
         printf("A: 0x%02X, X: 0x%02X, Y: 0x%02X, PC: 0x%04X, SP: 0x%02X, P: 0x%02X\n",cpu.a, cpu.x, cpu.y, cpu.pc, cpu.sp, cpu.p);
 
         /*if (cpu.pc == 0x105) {
