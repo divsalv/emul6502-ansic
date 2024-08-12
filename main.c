@@ -1,3 +1,4 @@
+/*6502 emul*/
 #include <stdio.h>
 #include <stdlib.h>
 // 6502 CPU Registers
