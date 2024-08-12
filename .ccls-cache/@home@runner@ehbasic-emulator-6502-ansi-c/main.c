@@ -1,3 +1,4 @@
+/*6502 emul*/
 #include <stdio.h>
 #include <stdlib.h>
 // 6502 CPU Registers
@@ -271,6 +272,7 @@ void ex01()
     memory[0x0024] = 0x60; // RTS
 }
 
+    
 /*Esempio 02 che chiede il nome e stampa ciao con il nome!*/
 void ex02()
 {
